@@ -11,15 +11,24 @@ export const UserForm = () => {
 
     const { username, password, email } = userForm;
 
-    const onInputChange = (e) => {
+    const onInputChange = e => {
         setUserForm({
             ...userForm,
             [e.target.name]: e.target.value,
         });
     };
 
+    const onSubmit = e => {
+        e.preventDefault();
+        if (!username || !password || !email) {
+            alert("Debe completar los campos del formulario")
+            return;
+        }
+        setUserForm(initalUserForm);
+    }
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
         <input 
         placeholder="username"
         name="username"
