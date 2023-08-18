@@ -6,7 +6,8 @@ const initalUserForm = {
     email: "",
 }
 
-export const UserForm = () => {
+// eslint-disable-next-line react/prop-types
+export const UserForm = ({ handlerAddUser }) => {
     const [userForm, setUserForm] = useState(initalUserForm);
 
     const { username, password, email } = userForm;
@@ -24,6 +25,7 @@ export const UserForm = () => {
             alert("Debe completar los campos del formulario")
             return;
         }
+        handlerAddUser(userForm);
         setUserForm(initalUserForm);
     }
 
