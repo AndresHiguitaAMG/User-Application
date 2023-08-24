@@ -25,6 +25,7 @@ export const UserForm = ({ handlerAddUser }) => {
             alert("Debe completar los campos del formulario")
             return;
         }
+        //Guardar el user form en el listado de usuarios
         handlerAddUser(userForm);
         setUserForm(initalUserForm);
     }

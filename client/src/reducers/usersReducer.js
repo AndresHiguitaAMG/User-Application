@@ -1,7 +1,7 @@
 export const usersReducer = (state = [], action) => {
     switch (action.type) {
         // eslint-disable-next-line no-undef
-        case addUser:
+        case "addUser":
             return [
                 ...state,
                 {
