@@ -1,7 +1,7 @@
 import { UserRow } from "./UserRow"
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-export const UsersList = ({ initialUsers, users = [] }) => {
+export const UsersList = ({ users, handlerRemoveUser = [] }) => {
   return (
     <>
         <table className="table table-hover table-striped">
@@ -16,12 +16,14 @@ export const UsersList = ({ initialUsers, users = [] }) => {
             </thead>
             <tbody>
                 {
+                    // eslint-disable-next-line react/prop-types
                     users.map(({ id, username, email }) => (
                         <UserRow 
                         key={id}
                         id={id}
                         username={username}
                         email={email}
+                        handlerRemoveUser={handlerRemoveUser}
                         />
                     ))
                 }
