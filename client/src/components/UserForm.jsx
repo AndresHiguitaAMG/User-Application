@@ -1,8 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 // eslint-disable-next-line react/prop-types
-export const UserForm = ({ handlerAddUser, initalUserForm }) => {
+export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
     const [userForm, setUserForm] = useState(initalUserForm);
+
+    useEffect(() => {
+        setUserForm({
+            ...userSelected,
+            // password: "",
+        });
+    }, [userSelected]);
+    
 
     const { username, password, email } = userForm;
 
