@@ -17,12 +17,11 @@ export const UsersList = ({ users, handlerRemoveUser = [], handlerUserSelectedFo
             <tbody>
                 {
                     // eslint-disable-next-line react/prop-types
-                    users.map(({ id, username, email, password }) => (
+                    users.map(({ id, username, email }) => (
                         <UserRow 
                         key={id}
                         id={id}
                         username={username}
-                        password={password}
                         email={email}
                         handlerRemoveUser={handlerRemoveUser}
                         handlerUserSelectedForm={handlerUserSelectedForm}

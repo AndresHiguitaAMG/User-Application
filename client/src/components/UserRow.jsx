@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-export const UserRow = ({ id, username, email, password, handlerRemoveUser, handlerUserSelectedForm }) => {
+export const UserRow = ({ id, username, email, handlerRemoveUser, handlerUserSelectedForm }) => {
 
 
   return (
@@ -15,7 +15,6 @@ export const UserRow = ({ id, username, email, password, handlerRemoveUser, hand
               id,
               username,
               email,
-              password,
             })
             }
             >
