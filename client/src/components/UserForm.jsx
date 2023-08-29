@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
 export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
@@ -24,7 +25,11 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
     const onSubmit = e => {
         e.preventDefault();
         if (!username || (!password && id === 0) || !email) {
-            alert("Debe completar los campos del formulario")
+            Swal.fire(
+                'Validation error',
+                'You must complete the form fields.',
+                'error'
+              );
             return;
         }
         //Guardar el user form en el listado de usuarios
