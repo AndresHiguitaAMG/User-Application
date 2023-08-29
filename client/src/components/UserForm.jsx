@@ -12,7 +12,7 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
     }, [userSelected]);
     
 
-    const { username, password, email } = userForm;
+    const { id, username, password, email } = userForm;
 
     const onInputChange = e => {
         setUserForm({
@@ -34,14 +34,14 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
 
   return (
     <form onSubmit={onSubmit}>
-        <input 
+        <input
         placeholder="username"
         name="username"
         onChange={onInputChange}
         value={username}
         className="form-control my-3 w-75"
         />
-        <input 
+        <input
         placeholder="password"
         name="password"
         type="password"
@@ -56,11 +56,16 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
         value={email}
         className="form-control my-3 w-75"
         />
+        <input 
+        type="hidden"
+        name="id"
+        value={id}
+        />
         <button
         className="btn btn-primary"
         type="submit"
         >
-        Crear
+        {id > 0 ? "Editar" : "Crear"}
         </button>
     </form>
   )
