@@ -12,7 +12,6 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
         });
     }, [userSelected]);
     
-
     const { id, username, password, email } = userForm;
 
     const onInputChange = e => {
@@ -73,6 +72,12 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
         type="submit"
         >
         {id > 0 ? "Edit" : "Create"}
+        </button>
+        <button
+        className="btn btn-primary mx-2"
+        type="button"
+        >
+          Close
         </button>
     </form>
   )

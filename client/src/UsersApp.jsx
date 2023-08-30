@@ -24,6 +24,11 @@ export const UsersApp = () => {
         />
       </div>
       <div className="col">
+        <button
+        className="btn btn-primary my-2"
+        >
+          New user
+        </button>
         {
           users.length === 0 ?
           <div className="alert alert-warning">
