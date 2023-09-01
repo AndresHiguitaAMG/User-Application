@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
-export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
+export const UserForm = ({ handlerAddUser, initalUserForm, userSelected, handlerCloseForm }) => {
     const [userForm, setUserForm] = useState(initalUserForm);
 
     useEffect(() => {
@@ -34,7 +34,12 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
         //Guardar el user form en el listado de usuarios
         handlerAddUser(userForm);
         setUserForm(initalUserForm);
-    }
+    };
+
+    const onCloseForm = () => {
+      handlerCloseForm();
+      setUserForm(initalUserForm);
+    };
 
   return (
     <form onSubmit={onSubmit}>
@@ -76,6 +81,7 @@ export const UserForm = ({ handlerAddUser, initalUserForm, userSelected }) => {
         <button
         className="btn btn-primary mx-2"
         type="button"
+        onClick={() => onCloseForm()}
         >
           Close
         </button>
