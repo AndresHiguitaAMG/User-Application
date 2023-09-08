@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const initialLoginForm = {
@@ -6,7 +6,8 @@ const initialLoginForm = {
     password: "",
 };
 
-export const LoginPage = () => {
+// eslint-disable-next-line react/prop-types
+export const LoginPage = ({ handlerLogin }) => {
     const [loginForm, setLoginForm] = useState(initialLoginForm);
     const { username, password } = loginForm;
 
@@ -23,11 +24,7 @@ export const LoginPage = () => {
             Swal.fire("Error de validación", "username y password requeridos", "error");
         }
         //Implementación del login
-        if (username === "admin" && password === "12345") {
-            //handlerLogin();
-        } else {
-            Swal.fire("Error login", "username o password invalidos", "error");
-        }
+        handlerLogin({username, password});
         setLoginForm(initialLoginForm);
     };
 
