@@ -56,7 +56,8 @@ export const LoginPage = ({ handlerLogin }) => {
                 <div className="modal-footer">
                     <button 
                     type="submit" 
-                    className="btn btn-primary">
+                    className="btn btn-primary"
+                    >
                         Login
                     </button>
                 </div>
