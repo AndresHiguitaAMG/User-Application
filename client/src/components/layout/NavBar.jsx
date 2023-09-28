@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"
+
 /* eslint-disable react/prop-types */
 export const NavBar = ({handlerLogout, login}) => {
   return (
@@ -15,7 +17,14 @@ export const NavBar = ({handlerLogout, login}) => {
     >
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/users">Usiarios</NavLink>
+          </li>
+        </ul>
+    </div>
+    <div className="collapse navbar-collapse justify-content-end" id="navbarNavLogout">
         <span className="nav-item nav-link text-primary mx-3">
             {
                 // eslint-disable-next-line react/prop-types
@@ -28,7 +37,6 @@ export const NavBar = ({handlerLogout, login}) => {
         >
             Logout
         </button>
-      
     </div>
   </div>
 </nav>
